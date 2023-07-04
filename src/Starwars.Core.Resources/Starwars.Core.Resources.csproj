@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<FileVersion>1.1.0</FileVersion>
+	<AssemblyVersion>1.1.0</AssemblyVersion>
+	<InformationalVersion>1.1.0-20230304-0014</InformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources2Content\Leia001.jpg" />
+    <None Remove="Resources2Content\LeiaQuotes.txt" />
+    <None Remove="Resources3EmbeddedResource\DarthVader001.jpg" />
+    <None Remove="Resources3EmbeddedResource\DarthVaderQuotes.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources2Content\Leia001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	  <Content Include="Resources2Content\LeiaQuotes.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+    <EmbeddedResource Include="Resources3EmbeddedResource\DarthVader001.jpg" />
+    <EmbeddedResource Include="Resources3EmbeddedResource\DarthVaderQuotes.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="JediResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>JediResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="JediResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>JediResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,46 @@
+﻿@model List<string>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Starwars Quotes</h1>
+        <p class="lead">Retrieve resources in .NET 4.8 from assembly (class library)</p>
+    </section>
+
+    <div class="row">
+        <div class="col-10">
+            <h2>Quotes</h2>
+            <ul>
+                @foreach (var quotes in Model)
+                {
+                    <li>@quotes</li>
+                }
+            </ul>
+        </div>
+        <div class="col-10">
+            <h2>Images</h2>
+
+            <ul>
+                <li>
+                    Path: <a href="/image/yoda" target="_blank">/image/yoda</a> 
+                    <br />
+                    <img src="/image/yoda" class="img-fluid" width="200px" />
+                </li>
+                <li>
+                    Path: <a href="/image/leia" target="_blank">/image/leia</a>
+                    <br />
+                    <img src="/image/leia" class="img-fluid" width="200px" />
+                </li>
+                <li>
+                    Path: <a href="/image/darthVader" target="_blank">/image/darthVader</a>
+                    <br />
+                    <img src="/image/darthVader" class="img-fluid" width="200px" />
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</main>
